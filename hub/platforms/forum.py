@@ -195,6 +195,46 @@ class Bilibili(BasePlatform):
             page.close()
         return posts
 
+    COMMENTS_SUPPORTED = True
+
+    def fetch_comments(self, ctx, post, limit: int = 30) -> list[dict]:
+        """采一个视频的评论，走 B站公开评论接口（JSON，免登录即可读热门评论）。
+
+        评论接口要的是数字 aid（oid），而我们存的 post_id 是 bvid，所以先用
+        view 接口把 bvid 换成 aid，再拉 /x/v2/reply。sort=2 取热门。
+        """
+        bvid = str(getattr(post, "post_id", "") or "")
+        if not bvid:
+            return []
+        hdr = {"Referer": f"https://www.bilibili.com/video/{bvid}",
+               "User-Agent": ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                              "AppleWebKit/537.36 Chrome/120 Safari/537.36")}
+        try:
+            v = ctx.request.get(
+                f"https://api.bilibili.com/x/web-interface/view?bvid={bvid}",
+                headers=hdr, timeout=12000)
+            aid = (((v.json() if v.ok else {}).get("data") or {}).get("aid"))
+            if not aid:
+                return []
+            r = ctx.request.get(
+                f"https://api.bilibili.com/x/v2/reply?type=1&oid={aid}&sort=2&ps={min(limit, 49)}",
+                headers=hdr, timeout=12000)
+            data = r.json() if r.ok else {}
+        except Exception:
+            return []
+        out = []
+        for c in ((data.get("data") or {}).get("replies") or [])[:limit]:
+            member = c.get("member") or {}
+            out.append({
+                "comment_id": str(c.get("rpid") or ""),
+                "commenter": member.get("uname") or "",
+                "commenter_id": str(member.get("mid") or ""),
+                "comment_time": ts_to_date(c.get("ctime")),
+                "content": clean_text((c.get("content") or {}).get("message") or ""),
+                "likes": to_int(c.get("like")),
+            })
+        return [c for c in out if (c.get("content") or "").strip()]
+
 
 @register
 class Zhihu(BasePlatform):
