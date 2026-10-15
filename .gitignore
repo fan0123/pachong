@@ -1,0 +1,27 @@
+# data/ 全部不进仓库：里面有浏览器登录态 cookie、api_key、采集到的数据
+data/*
+!data/.gitkeep
+!data/llm.example.json
+
+# 登录态与密钥（双保险，即使被挪出 data 也挡住）
+**/profiles/
+**/state/
+llm.json
+*.sqlite3
+*.sqlite3-journal
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 系统/编辑器
+.DS_Store
+.idea/
+.vscode/
+
+# 导出产物
+exports/
+reports/
