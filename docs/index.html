@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>网舆 · 舆情洞察中台</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="nprog"></div>
+<div class="shell">
+  <aside class="side">
+    <div class="brand">
+      <!-- 品牌标识：用户提供的 wangyu_logo.svg（内部是 1254px PNG）裁出图标部分，
+           缩到 96px 后 base64 内联——单文件打开/离线/导出 PDF 都不会掉图。
+           原始高清件留在 web/logos/wangyu_logo.svg，整套组合图在 web/logos/brand_full.png -->
+      <img class="mark" alt="网舆" src="data:image/png;base64,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">
+      <div><b>网舆</b><span>舆情洞察中台</span></div>
+    </div>
+    <div class="navgroup">监控分析</div>
+    <nav class="nav" id="nav">
+      <a data-page="dash" class="on">数据看板</a>
+      <a data-page="data">帖子明细<span class="pill" id="nav-data">0</span></a>
+      <a data-page="report">分析报告<span class="pill" id="nav-report">0</span></a>
+      <div class="navgroup">采集运维</div>
+      <a data-page="crawl">采集与任务<span class="pill" id="nav-task">0</span></a>
+      <a data-page="plat">平台与登录<span class="pill" id="nav-plat">0/10</span></a>
+      <a data-page="export">历史与导出</a>
+    </nav>
+    <div class="foot">
+      仅监听 127.0.0.1、无鉴权<br>
+      登录态存 data/profiles<br>
+      采集全程无头静默
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <h1 id="ttl">数据看板</h1>
+      <div class="right">
+        <!-- 关键词筛选：看板/明细/报告都跟着它走，用来区分"这批数据是哪次抓的" -->
+        <div class="field" style="min-width:158px">
+          <select id="kwfilter" onchange="loadData()" title="按采集关键词筛选">
+            <option value="">全部关键词</option>
+          </select>
+        </div>
+        <div class="field" style="min-width:128px"><input id="since" type="date" value="2026-06-01" onchange="loadData()"></div>
+        <div class="field" style="min-width:128px"><input id="until" type="date" value="2026-08-31" onchange="loadData()"></div>
+        <div class="seg" id="quickdate">
+          <button data-d="7">近7天</button><button data-d="30">近30天</button><button data-d="q3" class="on">6-8月</button>
+        </div>
+        <button class="btn ghost sm" onclick="loadAll()">刷新</button>
+        <!-- 登录态收到右上角：平时只看一个徽标，点开才展开各平台 -->
+        <div class="logindrop">
+          <button class="btn ghost sm" id="loginbadge" onclick="toggleLogin()">登录态 0/10</button>
+          <div class="dropbox" id="loginbox"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="view">
+      <!-- 数据看板 -->
+      <section class="page on" id="page-dash">
+        <div class="row" style="margin-bottom:16px">
+          <div class="seg" id="scopeseg">
+            <button data-s="main" class="on">负面主口径</button>
+            <button data-s="valid">全部有效</button>
+            <button data-s="noise">噪音复核</button>
+          </div>
+          <select id="scopemore" onchange="pickScope(this.value)" style="width:auto;min-width:132px">
+            <option value="">更多口径…</option>
+            <option value="neg_plus">主口径 ＋ 中性事件</option>
+            <option value="positive">仅正面反馈</option>
+            <option value="all">全部（含噪音）</option>
+          </select>
+        </div>
+        <div class="row" id="curfilter" style="margin:-6px 0 14px"></div>
+        <div class="kpis" id="kpis" style="margin-bottom:14px"></div>
+        <div class="card">
+          <header><h2>周期对比</h2>
+            <div class="right">
+              <div class="seg" id="cmpgrain">
+                <button data-g="week" class="on">周</button>
+                <button data-g="month">月</button>
+                <button data-g="14">双周</button>
+                <button data-g="custom">自定义</button>
+              </div>
+              <input id="cmpdays" type="number" min="1" max="180" value="10"
+                     style="width:76px;display:none" onchange="loadCompare()" title="自定义周期天数">
+              <select id="cmpmetric" onchange="renderCompare()" style="width:auto;min-width:112px">
+                <option value="posts">帖子数</option>
+                <option value="sov">声量分</option>
+                <option value="neg_sov">负面声量</option>
+                <option value="engagement">互动量</option>
+              </select>
+            </div>
+          </header>
+          <div class="body">
+            <div class="hint info" id="cmphint" style="margin-bottom:12px">—</div>
+            <div class="cmppair" id="cmppair"></div>
+            <div class="chart" id="c-cmp" style="height:300px"></div>
+            <div class="tblwrap" style="max-height:300px;margin-top:12px"><table id="cmptbl">
+              <thead><tr><th>周期</th><th>日期范围</th><th class="num">帖子数</th><th class="num">环比</th>
+                <th class="num">声量分</th><th class="num">环比</th><th class="num">负面声量</th>
+                <th class="num">环比</th><th>采集覆盖</th></tr></thead><tbody></tbody>
+            </table></div>
+          </div>
+        </div>
+        <div class="charts" style="margin-bottom:14px">
+          <div class="card" style="margin:0"><header><h2>平台分布</h2>
+            <span class="desc">按当前口径的帖子数占比</span></header>
+            <div class="body" style="display:flex;gap:14px;align-items:center">
+              <div class="chart" id="c-platdonut" style="width:230px;height:230px;flex:0 0 230px"></div>
+              <div class="tblwrap" style="flex:1;max-height:230px"><table id="plattable">
+                <thead><tr><th>平台</th><th class="num">帖子数</th><th class="num">占比</th>
+                  <th class="num">负面声量</th></tr></thead><tbody></tbody></table></div>
+            </div>
+          </div>
+          <div class="card" style="margin:0">
+            <header><h2>风险预警</h2>
+              <span class="desc">按真实数据规则计算，每条都带可核对依据</span>
+            </header>
+            <div class="body"><div class="risklist" id="risklist"></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <header><h2>重点预警监控</h2>
+            <span class="desc" id="alertnote">—</span>
+            <div class="right">
+              <span class="segbar" id="alertseg"></span>
+            </div>
+          </header>
+          <div class="body">
+            <div class="alertcats" id="alertcats"></div>
+            <div class="tblwrap alertlist" id="alertlist" style="max-height:340px"></div>
+          </div>
+        </div>
+        <div class="card">
+          <header><h2>事件归因</h2>
+            <span class="desc" id="eventnote">—</span>
+          </header>
+          <div class="body"><div class="evtlist grid2" id="events"></div></div>
+        </div>
+        <div class="card">
+          <header><h2>重点负面帖</h2>
+            <span class="desc">按「互动量 × 主体权重」排的负面影响力榜，「重点」＝超过本批高影响门槛</span>
+            <div class="right"><button class="btn ghost sm"
+              onclick="go('data');$('fsort').value='impact';renderTable()">去明细复核</button></div>
+          </header>
+          <div class="body tight"><div class="tblwrap hotneg" id="hotneg"></div></div>
+        </div>
+        <div class="card">
+          <header><h2>声量趋势与平台对比</h2>
+            <span class="desc">左：按日堆叠 + 累计曲线；右：各平台帖子数与互动量（双轴）</span></header>
+          <div class="body">
+          <div class="charts">
+            <div><div class="chart" id="c-trend"></div></div>
+            <div><div class="chart" id="c-plat"></div></div>
+          </div>
+        </div></div>
+        <div class="card">
+          <header><h2>热点事件时间甘特</h2>
+            <span class="desc">每根条＝一个事件的持续区间，长度是跨天数，颜色深浅是影响力；
+              红色竖线是趋势图上标注的峰值日，用来对齐"哪天被哪件事顶起来"</span></header>
+          <div class="body">
+          <div class="chart wide" id="c-gantt" style="height:340px"></div>
+        </div></div>
+        <div class="card">
+          <header><h2>日历热力</h2>
+            <span class="desc">每格＝一天的帖子数，颜色越深声量越集中，用来找爆发日</span></header>
+          <div class="body">
+          <div class="chart wide" id="c-cal"></div>
+        </div></div>
+        <div class="card">
+          <header><h2>清洗漏斗与分层结构</h2>
+            <span class="desc">左：全量数据被规则分到各层的比例；右：各平台的分层构成</span></header>
+          <div class="body">
+          <div class="charts">
+            <div><div class="chart" id="c-funnel"></div></div>
+            <div><div class="chart" id="c-layer"></div></div>
+          </div>
+        </div></div>
+        <div class="card">
+          <header><h2>主体 × 情感</h2>
+            <span class="desc">主体只看账号身份（政务/官媒/持证媒体/平台号/大V/自媒体/普通用户），情感看内容倾向；两维都带判定依据，可在明细里逐条复核。固定统计「剔噪后全量」</span>
+          </header>
+          <div class="body">
+            <div class="charts">
+              <div><div class="chart" id="c-actor"></div></div>
+              <div><div class="chart" id="c-sent"></div></div>
+            </div>
+          </div>
+          <div class="body">
+            <div class="charts">
+              <div><div class="chart" id="c-cross"></div></div>
+              <div><div class="chart" id="c-senttrend"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <header><h2>高热内容与账号</h2>
+            <span class="desc">左：互动量最高的话题；右：贡献声量最多的作者（颜色区分平台）</span></header>
+          <div class="body">
+          <div class="charts">
+            <div><div class="chart" id="c-top"></div></div>
+            <div><div class="chart" id="c-author"></div></div>
+          </div>
+        </div></div>
+        <div class="card">
+          <header><h2>声量换算</h2>
+            <span class="desc" id="sovnote">—</span>
+          </header>
+          <div class="body">
+            <div class="charts">
+              <div><div class="chart" id="c-sov"></div></div>
+              <div><div class="chart" id="c-sovtrend"></div></div>
+            </div>
+            <div class="hint info" id="sovconf">—</div>
+          </div>
+        </div>
+        <div class="card">
+          <header><h2>关键词云</h2>
+            <span class="desc">从当前口径的标题里抽高频词组（n-gram + 停用词 + 长词优先，已抹掉"开屏广告"这类背景词）</span>
+            <div class="right"><button class="btn ghost sm" onclick="loadCloud()">重算</button></div>
+          </header>
+          <div class="body"><div class="chart" id="c-cloud" style="height:340px"></div></div>
+        </div>
+        <div class="card">
+          <header><h2>平台覆盖与新鲜度</h2>
+            <span class="desc">「有时间占比」低=该入口不给发布时间，会被严格时间过滤挡掉；「覆盖天数」少=切片深度不够</span>
+          </header>
+          <div class="body tight"><div class="tblwrap" style="max-height:none"><table id="cov">
+            <thead><tr><th>平台</th><th class="num">入库</th><th class="num">当前口径</th>
+              <th class="num">有时间占比</th><th class="num">覆盖天数</th><th>最新发布</th><th>最近采集</th><th>覆盖度</th></tr></thead>
+            <tbody></tbody>
+          </table></div></div>
+        </div>
+      </section>
+
+      <!-- 平台与登录 -->
+      <section class="page" id="page-plat">
+        <div class="card">
+          <header>
+            <h2>平台与登录态</h2>
+            <span class="desc">扫码只弹一次；鼠标停在卡片上看该平台的采集口径与校验结论</span>
+            <div class="right">
+              <button class="btn ghost sm" onclick="checkAll()">全部体检</button>
+              <button class="btn ghost sm" onclick="loadPlats()">刷新状态</button>
+            </div>
+          </header>
+          <div class="body"><div class="plats" id="plats"></div></div>
+        </div>
+      </section>
+
+      <!-- 采集与任务（原「发起采集」+「任务中心」合并） -->
+      <section class="page" id="page-crawl">
+        <div class="card">
+          <header><h2>采集参数</h2><span class="desc">关键词逗号分隔；时间范围按帖子发布时间过滤，可独立于右上角区间设置</span></header>
+          <div class="body">
+            <div class="grid-form" style="margin-bottom:14px">
+              <div class="field" style="grid-column:span 2">
+                <label>关键词</label>
+                <input id="kw" value="百度网盘广告,百度网盘开屏广告,百度网盘自动跳转">
+              </div>
+              <div class="field"><label>关键词预设</label>
+                <select id="kwpreset" onchange="applyPreset()">
+                  <option value="">选择预设…</option>
+                  <option value="百度网盘广告,百度网盘开屏广告,百度网盘自动跳转">网盘负反馈（默认 3 词）</option>
+                  <option value="百度网盘广告,百度网盘开屏广告,百度网盘自动跳转,百度网盘弹窗广告,百度网盘摇一摇">网盘负反馈全量（5 词）</option>
+                  <option value="开屏广告,摇一摇广告">通用：开屏 + 摇一摇</option>
+                  <option value="开屏广告,摇一摇广告,开屏跳转,弹窗广告">通用：开屏负反馈全量（4 词）</option>
+                </select>
+              </div>
+              <div class="field"><label>每平台每词上限</label><input id="limit" type="number" value="50"></div>
+            </div>
+            <div class="grid-form" style="margin-bottom:14px">
+              <div class="field"><label>采集起始日（发布时间）</label><input id="csince" type="date"></div>
+              <div class="field"><label>采集截止日（发布时间）</label><input id="cuntil" type="date"></div>
+              <div class="field"><label>快捷范围</label>
+                <div class="seg fill" id="cquick">
+                  <button data-d="7">近7天</button><button data-d="30">近30天</button>
+                  <button data-d="90">近90天</button><button data-d="sync" class="on">同步顶部</button>
+                </div>
+              </div>
+              <div class="field"><label>增量采集</label>
+                <label class="chk" style="margin-top:2px" title="按「渠道 × 关键词 × 天」查采集流水，整段抓过的渠道直接跳过，只补没抓过的日期段">
+                  <input type="checkbox" id="gaponly" onchange="previewGap()">
+                  只补缺口（已抓过的渠道不再抓）
+                </label>
+              </div>
+              <div class="field"><label>相关性闸门</label>
+                <label class="chk" style="margin-top:2px">
+                  <input type="checkbox" id="strict" checked>
+                  标题或正文必须提到关键词
+                </label>
+              </div>
+              <div class="field"><label>评论采集</label>
+                <label class="chk" style="margin-top:2px" title="逐条打开帖子详情页抓评论（评论者+日期+内容）。较慢，且部分平台风控紧，默认关闭">
+                  <input type="checkbox" id="withcomments" onchange="$('climitwrap').style.display=this.checked?'':'none'">
+                  同时采集评论（评论者 / 日期 / 内容）
+                </label>
+                <span id="climitwrap" style="display:none;margin-top:4px">
+                  <label style="font-size:12px;color:var(--txt-3)">每帖最多
+                    <input id="climit" type="number" value="30" min="5" max="200"
+                      style="width:56px;padding:2px 4px"> 条</label>
+                </span>
+              </div>
+            </div>
+            <div class="field" style="margin-bottom:10px">
+              <label>采集平台 <a onclick="pickAll(1)">全选</a> · <a onclick="pickAll(0)">全不选</a> · <a onclick="pickReady()">只选可用</a></label>
+              <div class="chk-grid" id="pchk"></div>
+            </div>
+            <div class="gapbox" id="gapbox"></div>
+            <div class="hint info" id="crawltip">需扫码的平台会直接跳过，日志里会写原因；同一平台的浏览器目录不能并发，任务会自动串行。</div>
+            <div class="row" style="margin-top:16px">
+              <button class="btn" id="btn-crawl" onclick="crawl()">开始采集</button>
+              <button class="btn ghost" onclick="crawlAll()">全量采集（所有可用平台 × 库内全部关键词）</button>
+              <span class="muted" style="font-size:12px" id="crawlsum">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <header><h2>任务列表</h2><span class="desc">点任务看日志；登录任务每 15 秒吐一次心跳</span>
+            <div class="right"><button class="btn ghost sm" onclick="loadTasks()">刷新</button></div>
+          </header>
+          <div class="body"><div class="tasklist" id="tasks"><div class="empty">还没有任务</div></div></div>
+        </div>
+        <div class="card">
+          <header><h2>任务日志</h2><span class="desc" id="logttl">—</span>
+            <div class="right">
+              <div class="tctl" id="tctl"></div>
+              <label class="chk" style="border:0;background:none;padding:0">
+                <input type="checkbox" id="autoscroll" checked> 自动滚到底
+              </label>
+            </div>
+          </header>
+          <div class="body">
+            <div class="pgbox" id="progress"></div>
+            <pre class="log" id="log">选中上面的任务查看日志。日志区可上下滑动，保留本次运行的全部记录。</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- 帖子明细 -->
+      <section class="page" id="page-data">
+        <div class="card">
+          <header><h2>帖子明细</h2><span class="desc" id="tblinfo">—</span>
+            <div class="right"><button class="btn ghost" onclick="exportData(0)">导出当前筛选</button></div>
+          </header>
+          <div class="body">
+            <div class="grid-form">
+              <div class="field"><label>搜索标题 / 作者 / 正文</label><input id="q" placeholder="输入关键字回车" onkeydown="if(event.key==='Enter')loadData()"></div>
+              <div class="field"><label>平台</label><select id="fplat" onchange="renderTable()"><option value="">全部</option></select></div>
+              <div class="field"><label>分层</label><select id="flayer" onchange="renderTable()"><option value="">全部</option></select></div>
+              <div class="field"><label>主体类型</label><select id="factor" onchange="renderTable()"><option value="">全部</option></select></div>
+              <div class="field"><label>情感</label><select id="fsent" onchange="renderTable()"><option value="">全部</option></select></div>
+              <div class="field"><label>内容类型</label><select id="ftopic" onchange="renderTable()"><option value="">全部</option></select></div>
+              <div class="field"><label>排序</label><select id="fsort" onchange="renderTable()">
+                <option value="eng">互动量降序</option><option value="impact">负面影响力降序</option>
+                <option value="new">时间最新</option><option value="old">时间最早</option>
+              </select></div>
+              <div class="field"><label>每页</label><select id="psize" onchange="PAGE=1;renderTable()">
+                <option>25</option><option selected>50</option><option>100</option><option>200</option>
+              </select></div>
+            </div>
+          </div>
+          <div class="body tight"><div class="tblwrap"><table id="tbl">
+            <thead><tr>
+              <th>平台</th><th>发布时间</th><th>作者</th><th>主体</th><th>情感</th>
+              <th title="先判「这条在说什么事」再判正负：广告反馈/明星应援/营销活动/产品其他问题">内容类型</th>
+              <th>标题</th><th>分层</th>
+              <th class="num">赞</th><th class="num">评</th><th class="num">转</th><th class="num">藏</th>
+              <th class="num">阅读</th><th class="num">互动量</th>
+              <th class="num" title="负面影响力＝互动量 × 主体权重，只算负面">负面影响力</th>
+              <th>搜索词</th><th>人工复核</th>
+            </tr></thead><tbody></tbody>
+          </table></div></div>
+          <div class="pager">
+            <button class="btn ghost sm" id="prev" onclick="turnPage(-1)">上一页</button>
+            <button class="btn ghost sm" id="next" onclick="turnPage(1)">下一页</button>
+            <span class="muted" style="font-size:12px" id="pageinfo">第 1 / 1 页</span>
+            <span class="sp muted" style="font-size:12px">赞/评/转为 0：微信公众号、百家号网页侧不公开互动数；头条号是网页镜像口径</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 分析报告（接入大模型） -->
+      <section class="page" id="page-report">
+        <div class="card">
+          <header><h2>接入模型</h2>
+            <span class="desc">OpenAI 兼容协议：填 base_url + api_key + 模型名即可，配置存 data/llm.json，重启还在</span>
+          </header>
+          <div class="body">
+            <div class="field" style="margin-bottom:12px">
+              <label>常见服务预设（点一下自动填 base_url 与模型名，key 需自己申请）</label>
+              <div class="presets" id="presets"></div>
+            </div>
+            <div class="grid-form" style="margin-bottom:12px">
+              <div class="field"><label>名称</label><input id="m-name" placeholder="例如 硅基流动"></div>
+              <div class="field" style="grid-column:span 2"><label>base_url</label>
+                <input id="m-url" placeholder="https://api.siliconflow.cn/v1"></div>
+              <div class="field"><label>模型名</label><input id="m-model" placeholder="deepseek-ai/DeepSeek-V3"></div>
+              <div class="field" style="grid-column:span 2"><label>api_key（留空＝沿用已保存的）</label>
+                <input id="m-key" type="password" placeholder="sk-..."></div>
+            </div>
+            <input type="hidden" id="m-id">
+            <div class="row" style="margin-bottom:8px">
+              <label class="chk"><input type="checkbox" id="m-insecure"> 跳过证书校验（仅内网网关用；公网服务别关）</label>
+            </div>
+            <div class="row">
+              <button class="btn" onclick="saveModel()">保存模型</button>
+              <button class="btn ghost" onclick="clearModelForm()">清空表单</button>
+              <span class="muted" style="font-size:12px">key 明文保存在本机 data/llm.json，别提交到仓库</span>
+            </div>
+            <div class="mdls" id="mdls" style="margin-top:14px"></div>
+          </div>
+        </div>
+        <div class="card">
+          <header><h2>生成分析报告</h2>
+            <span class="desc">把当前口径的统计 + 互动量 TOP60 样本喂给模型，产出议题聚类、传播结构、风险评级与建议</span>
+            <div class="right">
+              <button class="btn" onclick="makeReport()">生成报告</button>
+              <button class="btn ghost sm" onclick="loadReports()">刷新列表</button>
+            </div>
+          </header>
+          <div class="body">
+            <div class="grid-form">
+              <div class="field" style="grid-column:span 2"><label>补充要求（可选）</label>
+                <input id="r-note" placeholder="例如：重点分析百度系产品，输出给管理层看的版本"></div>
+              <div class="field"><label>使用模型</label><select id="r-model"></select></div>
+              <div class="field"><label>输出格式</label>
+                <select id="r-fmt">
+                  <option value="md">结构化 Markdown（默认，可再导出 HTML/PDF）</option>
+                  <option value="html">富样式 HTML 网页（模型直接排版）</option>
+                </select>
+              </div>
+            </div>
+            <div class="hint info" style="margin-top:12px" id="r-tip">
+              报告用的口径与日期＝右上角选择 + 看板当前口径；生成通常需要 30~120 秒，进度在「采集与任务」里看。
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <header><h2>报告列表</h2><span class="desc" id="r-cur">—</span>
+            <div class="right" id="r-acts" style="display:none">
+              <button class="btn ghost sm" onclick="exportReport(CUR_REPORT,'html')">导出 HTML</button>
+              <button class="btn ghost sm" onclick="exportReport(CUR_REPORT,'pdf')">导出 PDF</button>
+              <button class="btn ghost sm" onclick="exportReport(CUR_REPORT,'txt')">导出 TXT</button>
+              <a class="btn ghost sm" id="r-dl" href="#">下载 Markdown</a>
+            </div>
+          </header>
+          <div class="body tight">
+            <!-- 不限高：点「查看」会在被点的那一行下面就地展开渲染好的 HTML 报告 -->
+            <div class="tblwrap" style="max-height:none"><table id="reports">
+              <thead><tr><th>文件名</th><th>大小</th><th>生成时间</th><th></th></tr></thead><tbody></tbody>
+            </table></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 历史与导出：主角是「采集历史」，点任意一条直接把看板切到那一批数据 -->
+      <section class="page" id="page-export">
+        <div class="card hero">
+          <header><h2>采集历史</h2>
+            <span class="desc">按「一次采集计划」展示：时间、关键词、平台、入库量；点整条即可把看板切到这批数据</span>
+            <div class="right">
+              <button class="btn ghost sm" onclick="loadRuns()">刷新</button>
+              <button class="btn ghost sm" onclick="exportRuns()">导出当前区间数据</button>
+            </div>
+          </header>
+          <div class="body">
+            <div class="kpis mini" id="runstat"></div>
+            <div class="row" style="margin:14px 0 4px">
+              <div class="field" style="flex:1;min-width:200px">
+                <input id="runq" placeholder="搜关键词 / 平台 / 时间窗，回车过滤"
+                       onkeydown="if(event.key==='Enter')renderRuns()">
+              </div>
+              <div class="seg" id="runfilter">
+                <button data-f="" class="on">全部</button>
+                <button data-f="ok">有入库</button>
+                <button data-f="fail">失败/为空</button>
+              </div>
+              <span class="muted" style="font-size:12px" id="runinfo">—</span>
+            </div>
+            <div class="runlist" id="runs"><div class="empty">还没有采集记录</div></div>
+          </div>
+        </div>
+
+        <details class="card fold" ontoggle="if(this.open)loadDups()">
+          <summary><b>重复内容</b><span class="desc">跨关键词/跨平台判为同一条的记录，只标记不删除，可逐条核对</span></summary>
+          <div class="body">
+            <div class="hint info" id="dupnote" style="margin-bottom:12px">—</div>
+            <div class="row" style="margin-bottom:12px">
+              <button class="btn sm" onclick="redoDedupe()">按当前口径重新判重</button>
+              <button class="btn ghost sm" onclick="loadDups()">刷新</button>
+              <span class="muted" style="font-size:12px">口径在「参数配置 › 去重」里调，改完会自动重算</span>
+            </div>
+            <div class="tblwrap" style="max-height:360px"><table id="dups">
+              <thead><tr><th>被判重的条目</th><th>平台</th><th>搜索词</th>
+                <th>保留的原始条目</th><th>原始平台</th><th class="num">互动量</th></tr></thead><tbody></tbody>
+            </table></div>
+          </div>
+        </details>
+
+        <details class="card fold" ontoggle="if(this.open)loadDeleted()">
+          <summary><b>回收站</b><span class="desc">人工删掉的内容都在这儿，可以逐条恢复；软删除不会被重新采集覆盖</span></summary>
+          <div class="body tight">
+            <div class="tblwrap" style="max-height:360px"><table id="trash">
+              <thead><tr><th>平台</th><th>发布</th><th>标题</th><th>作者</th>
+                <th class="num">互动量</th><th>搜索词</th><th></th></tr></thead><tbody></tbody>
+            </table></div>
+          </div>
+        </details>
+
+        <details class="card fold">
+          <summary><b>导出文件</b><span class="desc">按当前口径与日期区间导出，落 data/exports</span></summary>
+          <div class="body">
+            <div class="row" style="margin-bottom:12px">
+              <button class="btn ghost sm" onclick="exportData(0)">导出 Excel</button>
+              <button class="btn ghost sm" onclick="exportData(1)">Excel + JSONL</button>
+              <button class="btn ghost sm" onclick="loadFiles()">刷新列表</button>
+            </div>
+            <div class="tblwrap" style="max-height:340px"><table id="files">
+              <thead><tr><th>文件名</th><th>大小</th><th>生成时间</th><th></th></tr></thead><tbody></tbody>
+            </table></div>
+          </div>
+        </details>
+
+        <details class="card fold">
+          <summary><b>清洗分层</b><span class="desc">规则复用 kaiping_sentiment/clean.py 的词表，叠加主体 × 情感两维</span></summary>
+          <div class="body">
+            <div class="row" style="margin-bottom:12px">
+              <button class="btn ghost sm" onclick="reclean()">重新分层全部数据</button>
+            </div>
+            <div id="layerstat" class="row"></div>
+          </div>
+        </details>
+
+        <details class="card fold">
+          <summary><b>参数配置</b><span class="desc">口径参数存 data/settings.json，改完立刻生效</span></summary>
+          <div class="body">
+            <div class="row" style="margin-bottom:14px">
+              <button class="btn sm" onclick="saveSettings()">保存配置</button>
+              <button class="btn ghost sm" onclick="resetSettings()">恢复默认</button>
+            </div>
+            <div class="field" style="margin-bottom:6px"><label>主体权重（声量换算里补跨渠道转载放大，普通用户＝1.0 为基准）</label></div>
+            <div class="grid-form" id="set-actor_weight" style="margin-bottom:14px"></div>
+            <div class="field" style="margin-bottom:6px"><label>大V判定阈值（任一项达标即算大V）</label></div>
+            <div class="grid-form" id="set-bigv" style="margin-bottom:14px"></div>
+            <div class="field" style="margin-bottom:6px"><label>采集默认值</label></div>
+            <div class="grid-form" id="set-crawl" style="margin-bottom:14px"></div>
+            <div class="field" style="margin-bottom:6px"><label>报告参数（推理模型要把 max_tokens 调大，否则只返回思考、正文为空）</label></div>
+            <div class="grid-form" id="set-report" style="margin-bottom:14px"></div>
+            <div class="field" style="margin-bottom:6px"><label>词云参数</label></div>
+            <div class="grid-form" id="set-wordcloud" style="margin-bottom:14px"></div>
+            <div class="field" style="margin-bottom:6px"><label>去重口径（改完自动重算全库判重；正文字数填 0＝不看正文，关掉「作者参与指纹」＝同题不同号的转载也算重复）</label></div>
+            <div class="grid-form" id="set-dedupe"></div>
+          </div>
+        </details>
+      </section>
+    </div>
+  </div>
+</div>
+<div id="toasts"></div>
+<!-- 评论查看弹窗：点帖子标题后面的 💬 角标打开，展示评论者/时间/内容 -->
+<div class="cmtmodal" id="cmtmodal" style="display:none">
+  <div class="mask" onclick="closeComments()"></div>
+  <div class="cmtpanel">
+    <header><h3 class="cmttitle">评论</h3><button class="btn ghost sm" onclick="closeComments()">关闭</button></header>
+    <div class="cmtlist"></div>
+  </div>
+</div>
+<!-- 口径与清洗说明抽屉：内容由 clean_rules() 动态填，避免页面上再写一份会过时的说明 -->
+<div class="drawer" id="docdrawer">
+  <div class="mask" onclick="closeScopeDoc()"></div>
+  <div class="panel">
+    <header><h2>口径与清洗说明</h2>
+      <button class="btn ghost sm" onclick="closeScopeDoc()">关闭</button>
+    </header>
+    <div class="dbody" id="docbody"></div>
+  </div>
+</div>
+<script src="vendor/echarts.min.js"></script>
+<script src="static-shim.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
